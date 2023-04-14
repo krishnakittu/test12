@@ -7,10 +7,9 @@
 
 <h:body>
 	<div class="card">
-	<h:form name="download">
-			<p:commandButton value="Ajax Download">
-				<p:fileDownload value="#{fileBean.file}" />
-			</p:commandButton>
+	<h:form name="simpleForm">
+			<p:fileUpload value="#{fileBean.files}" mode="advanced" multiple="true" auto="true"
+            listener="#{fileBean.handleFileUpload}" onAdd="console.log(this)"/>
 		</h:form>
 	</div>
 </h:body>
